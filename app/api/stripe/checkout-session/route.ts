@@ -1,6 +1,6 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-export const POST = async (req, res) => {
+export const POST = async (req: any, res: any) => {
   if (req.method === "POST") {
     try {
       const params = {
@@ -23,7 +23,7 @@ export const POST = async (req, res) => {
       return new Response(JSON.stringify(session), { status: 200 });
     } catch (err) {
       console.log(err);
-      return new Response("Failed to chaeckout", { status: 500 });
+      return new Response("Failed to checkout", { status: 500 });
     }
   } else {
     res.setHeader("Allow", "POST");

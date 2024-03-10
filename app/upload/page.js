@@ -20,29 +20,29 @@ import StripeCheckout from "@/components/CheckoutTicket";
 
 export default function Upload() {
   const supabase = createClient();
-  const [upload, setUploading] = useState<boolean>(false);
-  const [activeStep, setActiveStep] = useState<number | null>(1);
-  const [fullName, setFullName] = useState<string | null>(null);
-  const [phoneNumber, setPhoneNumber] = useState<string | null>(null);
-  const [email, setEmail] = useState<string | null>(null);
-  const [driverLicense, setDriverLicense] = useState<File | null>(null);
-  const [ticket, setTicket] = useState<File | null>(null);
+  const [upload, setUploading] = useState(false);
+  const [activeStep, setActiveStep] = useState(1);
+  const [fullName, setFullName] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [driverLicense, setDriverLicense] = useState(null);
+  const [ticket, setTicket] = useState(null);
 
   let images = [ticket, driverLicense];
 
-  const handleNameInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleNameInputChange = (e) => {
     const { value } = e?.target;
     setFullName(value.replace(",", ""));
   };
 
-  const handleTicket = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleTicket = (e) => {
     const selectedFile = e.target.files && e.target.files[0];
     if (selectedFile) {
       setTicket(selectedFile);
     }
   };
 
-  const handleDriverLicense = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleDriverLicense = (e) => {
     const selectedFile = e.target.files && e.target.files[0];
     if (selectedFile) {
       setDriverLicense(selectedFile);
@@ -179,7 +179,7 @@ export default function Upload() {
                 disabled={!fullName || !fullName.includes(" ")}
                 size="sm"
                 onClick={() =>
-                  setActiveStep((prev: number | null) =>
+                  setActiveStep((prev) =>
                     prev === null ? null : prev + 1
                   )
                 }
@@ -227,7 +227,7 @@ export default function Upload() {
                 disabled={!ticket}
                 size="sm"
                 onClick={() =>
-                  setActiveStep((prev: number | null) =>
+                  setActiveStep((prev) =>
                     prev === null ? null : prev + 1
                   )
                 }
@@ -275,7 +275,7 @@ export default function Upload() {
               <Button
                 size="sm"
                 onClick={() =>
-                  setActiveStep((prev: number | null) =>
+                  setActiveStep((prev) =>
                     prev === null ? null : prev + 1
                   )
                 }
@@ -310,7 +310,7 @@ export default function Upload() {
   );
 }
 
-function UploadIcon(props: any) {
+function UploadIcon(props) {
   return (
     <svg
       {...props}

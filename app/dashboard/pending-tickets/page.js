@@ -11,7 +11,8 @@ import Image from "next/image";
 import { getPageFiles } from "next/dist/server/get-page-files";
 import { isTemplateLiteralTypeNode } from "typescript";
 import MoveToTickets from "../components/MoveToTickets";
-import { useEffect } from "react";
+
+
 export default async function PendingTickets() {
   const supabase = createClient();
 
