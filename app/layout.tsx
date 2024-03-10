@@ -12,7 +12,7 @@ const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
 
-export const metadata = {
+const metadata = {
   metadataBase: new URL(defaultUrl),
   title: "We handle your traffic ticket",
   description: "The fastest way to build apps with Next.js and Supabase",
