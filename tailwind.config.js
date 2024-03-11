@@ -8,7 +8,7 @@ module.exports = {
 ],
 plugins: [require("tailwindcss-animate")],
 darkMode: ["class"],
-content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+content: ["app/**/*.{ts,tsx,js}", "components/**/*.{ts,tsx,js}"],
 theme: {
   extend: {
     fontFamily: {

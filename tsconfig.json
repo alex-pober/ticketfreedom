@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/components/MoveToTickets.js", "app/dashboard/pending-tickets/page.js", "app/upload/page.js", "components/CheckoutTicket.js", "app/layout.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.js", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/components/MoveToTickets.js", "app/dashboard/pending-tickets/page.js", "app/upload/page.js", "components/CheckoutTicket.js", "app/layout.js"],
   "exclude": ["node_modules"]
 }
