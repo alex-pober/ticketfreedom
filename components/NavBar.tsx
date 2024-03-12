@@ -3,28 +3,32 @@
  * @see https://v0.dev/t/CowzfwdSDEY
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
-import { Separator } from "./ui/separator"
-import AuthButton from "./AuthButton"
-import LogoIcon from "@/app/TF-logo-vert.png"
-import LogoSvg from '@/app/logo-new.svg'
-import LogoSvgWhite from '@/app/logo-new-white.svg'
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
+import { Separator } from "./ui/separator";
+import AuthButton from "./AuthButton";
+import LogoSvgWhite from "@/app/logo-new-white.svg";
+
 export default function NavBar() {
   return (
     <div className="flex items-center justify-between min-w-full p-4 bg-black dark:bg-gray-800">
       <Link className="flex items-center gap-2" href="#">
-        <Image alt="logo image" src={LogoSvgWhite} width={200} height={60}/>
+        <Image alt="logo image" src={LogoSvgWhite} width={200} height={60} />
       </Link>
       <div className="hidden lg:flex items-center h-3 space-x-4 text-sm">
-        <Link className="text-s" href="#">
+        <Link className="text-s text-[#ffd35c]" href="#">
           Services
         </Link>
         <Separator orientation="vertical" />
-        <Button className="bg-[#ffd35c] text-black"  size="sm">
-          Fight my ticket
+        <Button
+          asChild
+          variant="outline"
+          className="text-[#ffd35c] border-[#ffd35c] bg-transparent"
+          size="sm"
+        >
+          <Link href="/upload">Fight my ticket</Link>
         </Button>
         <AuthButton />
       </div>
@@ -36,25 +40,40 @@ export default function NavBar() {
           </Button>
         </SheetTrigger>
         <SheetContent side="right" className="grid w-full p-4">
-            <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-              Home
-            </Link>
-            <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-              About
-            </Link>
-            <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-              Services
-            </Link>
-            <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-              Portfolio
-            </Link>
-            <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-              Contact
-            </Link>
+          <Link
+            className="text-lg font-medium hover:underline underline-offset-4"
+            href="#"
+          >
+            Home
+          </Link>
+          <Link
+            className="text-lg font-medium hover:underline underline-offset-4"
+            href="#"
+          >
+            About
+          </Link>
+          <Link
+            className="text-lg font-medium hover:underline underline-offset-4"
+            href="#"
+          >
+            Services
+          </Link>
+          <Link
+            className="text-lg font-medium hover:underline underline-offset-4"
+            href="#"
+          >
+            Portfolio
+          </Link>
+          <Link
+            className="text-lg font-medium hover:underline underline-offset-4"
+            href="#"
+          >
+            Contact
+          </Link>
         </SheetContent>
       </Sheet>
     </div>
-  )
+  );
 }
 
 function MenuIcon(props: any) {
@@ -75,9 +94,8 @@ function MenuIcon(props: any) {
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
-  )
+  );
 }
-
 
 function MountainIcon(props: any) {
   return (
@@ -95,5 +113,5 @@ function MountainIcon(props: any) {
     >
       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
     </svg>
-  )
+  );
 }
