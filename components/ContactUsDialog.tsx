@@ -37,7 +37,7 @@ export function ContactUsDialog() {
             <h1 className="text-4xl font-bold tracking-tighter xl:text-5xl/none text-black">
               1 (818) 930 - 7774
             </h1>
-            <h1 className="text-xl font-simibold xl:text-5xl/none text-black m-1">
+            <h1 className="text-xl font-simibold text-black m-1">
               info@ticketfreedom.com
             </h1>
           </DialogTitle>
