@@ -24,9 +24,9 @@ export default function LandingPageHero() {
       <section className="w-full lg:pt-8">
         <div className="container px-0 p-6 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="flex flex-col items-center justify-center gap-3">
+            <div className="flex flex-col items-center justify-center gap-1 mt-3">
               <h1
-                className="text-5xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-black"
+                className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-6xl/none text-black"
                 // style={{
                 //   background: 'linear-gradient(360deg, #000000, #322400, #634800, #956d00, #c69100, #f8b500, #ffc62a, #ffd15c)',
                 //   backgroundClip: 'text'
