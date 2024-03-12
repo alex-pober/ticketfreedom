@@ -1,6 +1,3 @@
-import NextLogo from "./NextLogo";
-import SupabaseLogo from "./SupabaseLogo";
-import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { Badge } from "@/components/ui/badge";
 
