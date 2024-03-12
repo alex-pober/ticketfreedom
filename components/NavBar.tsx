@@ -4,24 +4,29 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
 import { Separator } from "./ui/separator"
+import AuthButton from "./AuthButton"
+import LogoIcon from "@/app/TF-logo-vert.png"
+import LogoSvg from '@/app/logo-new.svg'
+import LogoSvgWhite from '@/app/logo-new-white.svg'
 export default function NavBar() {
   return (
-    <div className="flex items-center justify-between min-w-full p-4 bg-white dark:bg-gray-800">
+    <div className="flex items-center justify-between min-w-full p-4 bg-black dark:bg-gray-800">
       <Link className="flex items-center gap-2" href="#">
-        <MountainIcon className="h-6 w-6" />
-        <span className="text-lg font-semibold">1-888-TKT-FRDM</span>
+        <Image alt="logo image" src={LogoSvgWhite} width={200} height={60}/>
       </Link>
       <div className="hidden lg:flex items-center h-3 space-x-4 text-sm">
         <Link className="text-s" href="#">
           Services
         </Link>
         <Separator orientation="vertical" />
-        <Button size="sm">
-            Fight my ticket
-          </Button>
+        <Button className="bg-[#ffd35c] text-black"  size="sm">
+          Fight my ticket
+        </Button>
+        <AuthButton />
       </div>
       <Sheet>
         <SheetTrigger asChild>
