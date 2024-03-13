@@ -10,6 +10,8 @@ import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
 import { Separator } from "./ui/separator";
 import AuthButton from "./AuthButton";
 import LogoSvgWhite from "@/app/logo-new-white.svg";
+import { Badge } from "./ui/badge";
+import { ServicesDialog } from "./ServicesDialog";
 
 export default function NavBar() {
   return (
@@ -17,61 +19,20 @@ export default function NavBar() {
       <Link className="flex items-center gap-2" href="#">
         <Image alt="logo image" src={LogoSvgWhite} width={200} height={60} />
       </Link>
-      <div className="hidden lg:flex items-center h-3 space-x-4 text-sm">
-        <Link className="text-s text-[#ffd35c]" href="#">
-          Services
-        </Link>
-        <Separator orientation="vertical" />
-        <Button
-          asChild
-          variant="outline"
-          className="text-[#ffd35c] border-[#ffd35c] bg-transparent"
-          size="sm"
-        >
-          <Link href="/upload">Fight my ticket</Link>
-        </Button>
-        <AuthButton />
-      </div>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button className="lg:hidden" size="icon" variant="outline">
-            <MenuIcon className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
+      <div className="flex gap-4">
+        <ServicesDialog />
+        <div className="hidden md:flex items-center space-x-4 text-sm ">
+          <Button
+            asChild
+            variant="outline"
+            className="text-[#ffd35c] border-[#ffd35c] bg-transparent"
+            size="sm"
+          >
+            <Link href="/upload">Fight my ticket</Link>
           </Button>
-        </SheetTrigger>
-        <SheetContent side="right" className="grid w-full p-4">
-          <Link
-            className="text-lg font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Home
-          </Link>
-          <Link
-            className="text-lg font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            About
-          </Link>
-          <Link
-            className="text-lg font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Services
-          </Link>
-          <Link
-            className="text-lg font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Portfolio
-          </Link>
-          <Link
-            className="text-lg font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Contact
-          </Link>
-        </SheetContent>
-      </Sheet>
+          <AuthButton />
+        </div>
+      </div>
     </div>
   );
 }
@@ -79,20 +40,19 @@ export default function NavBar() {
 function MenuIcon(props: any) {
   return (
     <svg
-      {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke="#ffd35c"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <line x1="3" x2="21" y1="6" y2="6" />
+      <line x1="3" x2="21" y1="12" y2="12" />
+      <line x1="3" x2="21" y1="18" y2="18" />
     </svg>
   );
 }

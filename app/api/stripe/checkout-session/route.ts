@@ -14,8 +14,8 @@ export const POST = async (req: any, res: any) => {
           },
         ],
         payment_method_types: ["card"],
-        success_url: `${req.headers.get("origin")}/success`,
-        cancel_url: `${req.headers.get("origin")}/canceled`,
+        success_url: `${req.headers.get("origin")}/upload/success`,
+        cancel_url: `${req.headers.get("origin")}/upload/canceled`,
       };
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
