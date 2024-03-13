@@ -75,7 +75,7 @@ export function ServicesDialog() {
         <ProfileForm className="m-3" />
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button>Cancel</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

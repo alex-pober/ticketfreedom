@@ -9,7 +9,7 @@ export const POST = async (req: any, res: any) => {
         line_items: [
           {
             // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-            price: 'price_1OqrXbRvLi4HOMUFA1oY0d3E',
+            price: 'price_1OtyjtRvLi4HOMUFeaYXJ76h',
             quantity: 1,
           },
         ],
