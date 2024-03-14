@@ -114,8 +114,9 @@ export default function Upload() {
     console.log("Redirecting to checkout...");
 
     const result = stripe.redirectToCheckout({ sessionId: data.id });
-    if (result) setUploading(false);
+    console.log(result)
     if (result.error) {
+      setUploading(false);
       console.log(result.error.message);
       console.log("Something went wrong");
     }

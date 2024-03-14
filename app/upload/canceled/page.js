@@ -23,9 +23,9 @@ export default function Canceled() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#ff4d4d"
-                stroke-width="2.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 class="lucide lucide-circle-x"
               >
                 <circle cx="12" cy="12" r="10" />

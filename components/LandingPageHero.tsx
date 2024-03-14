@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Rearviewimage from "@/app/rearviewimage.png";
 import { ContactUsDialog } from "./ContactUsDialog";
+import NewRearViewImage from '@/app/landing-page-new.png'
 export default function LandingPageHero() {
   return (
     <div className="flex flex-col gap-16 items-center">
@@ -36,7 +37,7 @@ export default function LandingPageHero() {
 
             <Image
               alt="image of cop in rear view mirror"
-              src={Rearviewimage}
+              src={NewRearViewImage}
               width={500}
               height={200}
             />
