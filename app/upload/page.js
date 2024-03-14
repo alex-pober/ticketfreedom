@@ -17,6 +17,7 @@ import StripeCheckout from "@/components/CheckoutTicket";
 import Loading from "./loading";
 import { useRouter } from "next/navigation";
 import LoadingWithMessages from "./uploading";
+import { getStripe } from '@/utils/stripe/client';
 
 export default function Upload() {
   const supabase = createClient();
@@ -74,7 +75,8 @@ export default function Upload() {
           .upload(filePath, imageFile);
         return result?.data?.path;
       } catch (error) {
-        // Handle error here
+        console.log(error)
+        alert(error)
       }
     });
 
@@ -321,7 +323,7 @@ export default function Upload() {
               <CardTitle className="font-normal">
                 Traffic Ticket Legal Service
               </CardTitle>
-              <CardTitle className="text-4xl">$150</CardTitle>
+              <CardTitle className="text-4xl">$149.99</CardTitle>
               <CardDescription className="text-center">
                 We can't guarantee 100% dismissal, but our lawyers will give it
                 their all for your best shot.
@@ -332,7 +334,7 @@ export default function Upload() {
               <Button
                 className="w-64 m-auto"
                 onClick={async () => {
-                  await handleUpload();
+                  await insertDataAndUploadImage();
                   handleCheckout();
                 }}
               >
