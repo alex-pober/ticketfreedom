@@ -41,7 +41,7 @@ export function ServicesDialog() {
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>
-              <h1 className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-6xl/none text-black m-3">
+              <h1 className="text-4xl font-extrabold tracking-tight lg:text-4xl">
                 We do more than just tickets.
               </h1>
             </DialogTitle>
@@ -55,14 +55,14 @@ export function ServicesDialog() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-      <Button
-            className="lg:hidden bg-black border-black"
-            size="icon"
-            variant="outline"
-          >
-            <MenuIcon className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
+        <Button
+          className="lg:hidden bg-black border-black"
+          size="icon"
+          variant="outline"
+        >
+          <MenuIcon className="h-6 w-6" />
+          <span className="sr-only">Toggle navigation menu</span>
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
@@ -86,37 +86,37 @@ export function ServicesDialog() {
 function ProfileForm({ className }: React.ComponentProps<"div">) {
   return (
     <div className={cn("grid items-start gap-4", className)}>
-      <Badge
+      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
+        <h1 className="text-4xl font-bold">Criminal</h1>
+        <p className="text-m">Misdemeanor & Felonies</p>
+      </div>
+
+      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
+        <h1 className="text-4xl font-bold">Injury & Accidents</h1>
+      </div>
+
+
+      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
+        <h1 className="text-4xl font-bold">Restraining Orders</h1>
+      </div>
+
+      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
+        <h1 className="text-4xl font-bold">Expungements</h1>
+      </div>
+
+      {/* <Badge
         variant="outline"
         className="bg-[#ffd35c] justify-center outline outline-4 outline-{#ffd35c} text-4xl"
       >
-        Car accidents
-      </Badge>
-      <Badge
-        variant="outline"
-        className="bg-[#ffd35c] justify-center outline outline-4 outline-{#ffd35c} text-4xl"
-      >
-        Personal Injury
-      </Badge>
-      <Badge
-        variant="outline"
-        className="bg-[#ffd35c] justify-center outline outline-4 outline-{#ffd35c} text-4xl"
-      >
-        Insurance Claim
-      </Badge>
-      <Badge
-        variant="outline"
-        className="bg-[#ffd35c] justify-center outline outline-4 outline-{#ffd35c} text-4xl"
-      >
-        Uninsured Motorist
-      </Badge>
+        Injury & Accidents
+      </Badge> */}
       <div className="flex flex-col gap-3 items-center m-3">
-        <h1 className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-6xl/none text-black">
+        <h1 className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-4xl/none text-black">
           Give us a call
         </h1>
         <a
           href="tel:8888583736"
-          className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-6xl/none text-black"
+          className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-5xl/none text-black"
         >
           888-858-3736
         </a>
