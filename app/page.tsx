@@ -34,7 +34,7 @@ export default async function Index() {
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs mt-20">
         <p>
           <a>
-        Copyright © 2024 , Ticket Freedom Proffesional Law Corporation. All Rights Reserved
+        Copyright © 2024 , Ticket Freedom Professional Law Corporation. All Rights Reserved
           </a>
         </p>
       </footer>
