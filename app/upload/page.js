@@ -56,7 +56,7 @@ export default function Upload() {
     setFullName("");
     setDriverLicense(null);
     setTicket(null);
-    router.push('/')
+    router.push("/");
   };
 
   async function insertDataAndUploadImage() {
@@ -90,14 +90,37 @@ export default function Upload() {
         email: email,
         files: uploadResults,
       });
-
-    if (uploadResults) {
-      setUploading(false);
-    }
   }
 
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    const response = await fetch("/api/stripe/checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify({ cart, userId }),
+    });
+
+    if (response.statusCode === 500) {
+      return;
+    }
+
+    const data = await response.json();
+
+    console.log("Redirecting to checkout...");
+
+    const result = stripe.redirectToCheckout({ sessionId: data.id });
+    if (result) setUploading(false);
+    if (result.error) {
+      console.log(result.error.message);
+      console.log("Something went wrong");
+    }
+  };
+
   if (uploading) {
-    return <LoadingWithMessages />
+    return <LoadingWithMessages />;
   }
 
   return (
@@ -305,7 +328,16 @@ export default function Upload() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
-              <StripeCheckout handleUpload={insertDataAndUploadImage} />
+              {/* <StripeCheckout handleUpload={insertDataAndUploadImage} /> */}
+              <Button
+                className="w-64 m-auto"
+                onClick={async () => {
+                  await handleUpload();
+                  handleCheckout();
+                }}
+              >
+                Pay
+              </Button>
             </CardContent>
           </Card>
         </div>

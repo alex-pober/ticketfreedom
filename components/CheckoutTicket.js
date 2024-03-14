@@ -10,15 +10,6 @@ import Link from 'next/link';
 
 export default function StripeCheckout({handleUpload}) {
 
-  // const handleStripeCheckout = async() => {
-
-  //   const withStripe = await checkoutWithStripe()
-  //   console.log(withStripe)
-
-  //   const stripe = await getStripe()
-  //   console.log(stripe)
-  // }
-
   const handleCheckout = async () => {
     const stripe = await getStripe()
 
