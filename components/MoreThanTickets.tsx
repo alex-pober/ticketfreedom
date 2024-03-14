@@ -32,7 +32,7 @@ export default function ThreeSteps() {
 
         <div className="max-w-60 flex flex-col justify-center items-center align-center">
           <h1 className="min-h-16 text-2xl font-bold tracking-tighter text-black flex flex-wrap content-center">
-            Photo of your ticket
+            Take a photo of your ticket
           </h1>
           <Image
             className="border-8 border-[#ffd35c] rounded-lg outline outline-4 outline-black"
@@ -59,7 +59,7 @@ export default function ThreeSteps() {
 
       <div className="flex flex-col justify-center items-center">
         <p className="text-gray-500 md:text-xl dark:text-gray-500 text-center">
-          No going to court, No headache, For just $149.99
+          No going to court, No headache, just $149.99 flat fee.
         </p>
         <Button
           asChild
