@@ -33,14 +33,8 @@ export default async function Index() {
 
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs mt-20">
         <p>
-          Powered by{" "}
-          <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Supabase
+          <a>
+        Copyright © 2024 , Ticket Freedom Proffesional Law Corporation. All Rights Reserved
           </a>
         </p>
       </footer>
