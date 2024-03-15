@@ -8,16 +8,6 @@ const nextConfig = {
         hostname: 'izssqldldcgykfuoqepr.supabase.co'
       },
     ],
-  },
-  experimental: {
-    headers() {
-      return [
-        {
-          source: "/.well-known/apple-developer-merchantid-domain-association",
-          headers: [{ key: "content-type", value: "application/json" }]
-        }
-      ];
-    }
   }
 };
 
