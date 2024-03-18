@@ -29,6 +29,7 @@ export default function Upload() {
   const [email, setEmail] = useState(null);
   const [driverLicense, setDriverLicense] = useState(null);
   const [ticket, setTicket] = useState(null);
+  const [courtLocation, setCourtLocation] = useState(null);
 
   let images = [ticket, driverLicense];
 
@@ -50,6 +51,10 @@ export default function Upload() {
       setDriverLicense(selectedFile);
     }
   };
+
+  const handleSelectChange= (value) => {
+    setCourtLocation(value)
+  }
 
   const handleCancelForm = () => {
     //ADD TO REDIRECT BACK TO HOME PAGE
@@ -144,7 +149,7 @@ export default function Upload() {
             <div className="animate-in stepper flex flex-row items-center space-x-4 text-sm">
               <Avatar>
                 <AvatarFallback
-                  className={activeStep === 1 ? "bg-black	text-white " : ""}
+                  className={activeStep === 1 ? "bg-[#ffd35c]	text-black" : ""}
                 >
                   1
                 </AvatarFallback>
@@ -152,7 +157,7 @@ export default function Upload() {
               <Separator className="w-5" />
               <Avatar>
                 <AvatarFallback
-                  className={activeStep === 2 ? "bg-black	text-white " : ""}
+                  className={activeStep === 2 ? "bg-[#ffd35c]	text-black " : ""}
                 >
                   2
                 </AvatarFallback>
@@ -160,7 +165,7 @@ export default function Upload() {
               <Separator className="w-5" />
               <Avatar>
                 <AvatarFallback
-                  className={activeStep === 3 ? "bg-black	text-white " : ""}
+                  className={activeStep === 3 ? "bg-[#ffd35c]	text-black " : ""}
                 >
                   3
                 </AvatarFallback>
@@ -202,13 +207,13 @@ export default function Upload() {
                   setEmail(e.target.value);
                 }}
               />
-              <ComboboxDemo />
+              <ComboboxDemo onChange={handleSelectChange}/>
               <div className="grid gap-4">
                 <CardDescription className="text-xs m-auto mt-[-12px]">
                   (we only offer services in LA, OC, Riverside)
                 </CardDescription>
                 <Button
-                  disabled={!fullName || !fullName.includes(" ")}
+                  disabled={!(phoneNumber !== null && fullName !== null && fullName?.includes(" ") && email?.includes("@") && email !== null && courtLocation !== null)}
                   size="sm"
                   onClick={() =>
                     setActiveStep((prev) => (prev === null ? null : prev + 1))

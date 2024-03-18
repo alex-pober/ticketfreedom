@@ -182,7 +182,7 @@ const frameworks = [
   },
 ]
 
-export function ComboboxDemo() {
+export function ComboboxDemo({onChange}: {onChange: any}) {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
 
@@ -212,9 +212,9 @@ export function ComboboxDemo() {
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
-                    console.log(framework)
                     setValue(framework.value)
                     setOpen(false)
+                    onChange(framework.value)
                   }}
                 >
                   <Check
