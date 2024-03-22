@@ -18,6 +18,8 @@ import Loading from "./loading";
 import { useRouter } from "next/navigation";
 import LoadingWithMessages from "./uploading";
 import { getStripe } from '@/utils/stripe/client';
+import ZelleLogo from "@/app/zelleLogo.svg"
+import Image from "next/image";
 
 export default function Upload() {
   const supabase = createClient();
@@ -27,6 +29,7 @@ export default function Upload() {
   const [fullName, setFullName] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState(null);
   const [email, setEmail] = useState(null);
+  const [dlNumber, setDlNumber] = useState(null)
   const [driverLicense, setDriverLicense] = useState(null);
   const [ticket, setTicket] = useState(null);
   const [courtLocation, setCourtLocation] = useState(null);
@@ -39,6 +42,7 @@ export default function Upload() {
   };
 
   const handleTicket = (e) => {
+    console.log(e)
     const selectedFile = e.target.files && e.target.files[0];
     if (selectedFile) {
       setTicket(selectedFile);
@@ -46,6 +50,7 @@ export default function Upload() {
   };
 
   const handleDriverLicense = (e) => {
+
     const selectedFile = e.target.files && e.target.files[0];
     if (selectedFile) {
       setDriverLicense(selectedFile);
@@ -96,6 +101,7 @@ export default function Upload() {
         number: phoneNumber,
         email: email,
         files: uploadResults,
+        "driver-license-number": dlNumber
       });
   }
 
@@ -193,6 +199,14 @@ export default function Upload() {
               </CardDescription>
               <Input
                 type="text"
+                placeholder="Driver License Number"
+                value={dlNumber || ""}
+                onChange={(e) => {
+                  setDlNumber(e.target.value);
+                }}
+              />
+              <Input
+                type="text"
                 placeholder="Phone number"
                 value={phoneNumber || ""}
                 onChange={(e) => {
@@ -243,7 +257,7 @@ export default function Upload() {
             <CardContent className="flex flex-col gap-4">
               <div className="border-dashed border-2 border-gray-200 rounded-lg w-full h-32 flex items-center justify-center transition-colors border-gray-300 border-dashed dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-400">
                 <input
-                  className="h-[inherit] outline-red absolute opacity-0 cursor-pointer"
+                  className="h-[inherit] absolute opacity-0 cursor-pointer"
                   type="file"
                   onChange={handleTicket}
                 />
@@ -288,7 +302,7 @@ export default function Upload() {
             <CardContent className="flex flex-col gap-4">
               <div className="border-dashed border-2 border-gray-200 rounded-lg w-full h-32 flex items-center justify-center transition-colors border-gray-300 border-dashed dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-400">
                 <input
-                  className="h-[inherit] outline-red absolute opacity-0 cursor-pointer"
+                  className="h-[inherit] absolute opacity-0 cursor-pointer"
                   type="file"
                   onChange={handleDriverLicense}
                 />
@@ -337,7 +351,7 @@ export default function Upload() {
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
               {/* <StripeCheckout handleUpload={insertDataAndUploadImage} /> */}
-              <Button
+              {/* <Button
                 className="w-64 m-auto"
                 onClick={async () => {
                   await insertDataAndUploadImage();
@@ -345,6 +359,16 @@ export default function Upload() {
                 }}
               >
                 Pay
+              </Button> */}
+              <Button
+                variant="outline"
+                className="w-64 m-auto outline outline-2 outline-[#671CCA]"
+                onClick={async () => {
+                  await insertDataAndUploadImage();
+                  router.push('/zelle')
+                }}
+              >
+                Pay with Zelle <Image src={ZelleLogo} height={32} width={32} className="m-1"/>
               </Button>
             </CardContent>
           </Card>
