@@ -1,6 +1,7 @@
 import { GeistSans } from "geist/font/sans";
 import { cn } from "../lib/utils"
 import { fontSans } from "@/lib/fonts"
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 export const metadata = {
@@ -65,6 +66,7 @@ export default function RootLayout({children}) {
           "min-h-screen bg-background font-sans subpixel-antialiased",
           fontSans.className
         )}>
+        <Analytics />
         <main className="">
           {children}
         </main>
