@@ -66,9 +66,9 @@ export default function RootLayout({children}) {
           "min-h-screen bg-background font-sans subpixel-antialiased",
           fontSans.className
         )}>
-        <Analytics />
         <main className="">
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
