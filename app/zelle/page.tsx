@@ -15,7 +15,7 @@ export default function Zelle() {
   const router = useRouter();
 
   return (
-    <div className="flex h-dvh">
+    <div className="flex h-dvh mx-3">
       <div className="flex m-auto flex-col items-center gap-4 max-w-md">
         <Card>
           <CardHeader className="flex flex-col items-center gap-2">

@@ -139,7 +139,7 @@ export default function Upload() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="flex h-dvh m-3">
+      <div className="flex h-dvh mx-3">
         <div className="flex m-auto flex-col items-center gap-4 max-w-md">
           {activeStep !== 4 && (
             <h2 className="text-3xl font-semibold tracking-tight first:mt-0">
