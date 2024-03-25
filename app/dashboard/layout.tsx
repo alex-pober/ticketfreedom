@@ -20,7 +20,7 @@ export default function DashboardLayout({
   return (
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}
-      <NavigationMenu className="m-auto max-w-screen-lg wrap">
+      <NavigationMenu className="p-1 m-auto max-w-screen-lg wrap">
         <NavigationMenuList>
           <span className="text-lg font-bold">TicketFreedom</span>
         </NavigationMenuList>

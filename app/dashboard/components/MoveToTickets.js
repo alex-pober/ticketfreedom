@@ -31,13 +31,14 @@ import {
 export default function MoveToTickets({ pendingTicketInfo }) {
   const supabase = createClient();
   const [existingClients, setExistingClients] = useState([])
+
   // Client Info
   const [existingClientId, setExistingClientId] = useState(null)
   const [name, setName] = useState(pendingTicketInfo.name);
+  const [dlNumber, setDlNumber] = useState(pendingTicketInfo.driver_license_number)
   const [email, setEmail] = useState(pendingTicketInfo.email);
   const [phoneNumber, setPhoneNumber] = useState(pendingTicketInfo.number);
   const [address, setAddress] = useState();
-  const [driverLicense, setDriverLicense] = useState();
   const [dob, setDob] = useState();
 
   //Ticket Info
@@ -90,7 +91,7 @@ export default function MoveToTickets({ pendingTicketInfo }) {
         email: email,
         phone: phoneNumber,
         address: address,
-        driver_license: driverLicense},
+        driver_license: dlNumber},
       ])
       .select()
       console.log(client[0].id)
@@ -159,6 +160,19 @@ export default function MoveToTickets({ pendingTicketInfo }) {
             /> */}
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="dlNumber" className="text-right">
+              Driver License
+            </Label>
+            <Input
+              id="dlNumber"
+              className="col-span-3"
+              value={dlNumber}
+              onChange={(e) => {
+                setDlNumber(e.target.value);
+              }}
+            />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="email" className="text-right">
               Email
             </Label>
@@ -194,19 +208,6 @@ export default function MoveToTickets({ pendingTicketInfo }) {
               value={address}
               onChange={(e) => {
                 setAddress(e.target.value);
-              }}
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="driver-license" className="text-right">
-              Driver License
-            </Label>
-            <Input
-              id="driver-license"
-              className="col-span-3"
-              value={driverLicense}
-              onChange={(e) => {
-                setDriverLicense(e.target.value);
               }}
             />
           </div>

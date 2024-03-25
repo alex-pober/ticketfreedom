@@ -26,15 +26,14 @@ export default async function PendingTickets() {
   }
 
   async function getPhotoUrls(photo) {
-    console.log(photo)
     const { data, error } = await supabase.storage
           .from("ticketfreedom-files")
-          .createSignedUrl(photo, 60 * 60);
+          .getPublicUrl(photo, 60 * 60);
         if (error) {
           console.error("Error generating signed url", error);
           return null;
         }
-        return (data.signedUrl);
+        return (data.publicUrl);
   }
 
   async function processData(data) {
@@ -62,13 +61,14 @@ export default async function PendingTickets() {
 
   return (
     <div className="flex flex-col gap-2 max-w-screen-sm w-screen m-auto p-1">
-      {tickets?.map(({id, name, number, email, files, created_at }) => {
+      {tickets?.map(({id, name, number, email, files, created_at, driver_license_number }) => {
         const photoLinkItem = allPhotoLinks?.find(item => item.id === id);
         return (
           <Card key={id} className="flex flex-col justify-between">
             <div className="flex flex-row justify-between">
             <CardHeader className="p-2">
               <CardTitle>{name}</CardTitle>
+              <CardDescription>{driver_license_number}</CardDescription>
               <CardDescription>{email}</CardDescription>
               <CardDescription>{number}</CardDescription>
               <CardDescription className="text-xs	">
@@ -94,7 +94,7 @@ export default async function PendingTickets() {
               ))}
             </CardContent>
             </div>
-            <MoveToTickets key={id} pendingTicketInfo={{id, name, number, email, files, created_at}}/>
+            <MoveToTickets key={id} pendingTicketInfo={{id, name, number, email, files, created_at, driver_license_number}}/>
           </Card>
         );
       })}

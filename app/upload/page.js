@@ -30,8 +30,10 @@ export default function Upload() {
   const [phoneNumber, setPhoneNumber] = useState(null);
   const [email, setEmail] = useState(null);
   const [dlNumber, setDlNumber] = useState(null)
+  //photo \/\/\/\/
   const [driverLicense, setDriverLicense] = useState(null);
   const [ticket, setTicket] = useState(null);
+  //photo /\/\/\/\
   const [courtLocation, setCourtLocation] = useState(null);
 
   let images = [ticket, driverLicense];
@@ -101,7 +103,7 @@ export default function Upload() {
         number: phoneNumber,
         email: email,
         files: uploadResults,
-        "driver-license-number": dlNumber
+        driver_license_number: dlNumber
       });
   }
 
