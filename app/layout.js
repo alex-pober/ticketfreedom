@@ -9,12 +9,12 @@ export const metadata = {
   description:
     "Get your traffic tickets handled by a professional lawyer in Los Angeles. Fast, efficient, and reliable legal services to fight your traffic ticket violations. Save time, money, and stress with Ticket Freedom.",
   keywords: [
-    "Traffic Ticket",
-    "Los Angeles Lawyer",
-    "Traffic Violation",
-    "Legal Services",
+    "Traffic Ticket Lawyer",
+    "Traffic ticket lawyer in los angeles ",
+    "traffic ticket attorney los angeles ca",
+    "la ticket lawyer",
     "Ticket Freedom",
-    "DUI Lawyer"
+    "Criminal Lawyer Los Angeles"
   ],
   metadataBase: new URL("https://www.ticketfreedom.com"),
   openGraph: {
