@@ -53,7 +53,7 @@ export default function MoveToTickets({ pendingTicketInfo }) {
   const [courtLocation, setCourtLocation] = useState();
   const [notes, setNotes] = useState();
   const [payment, setPayment] = useState();
-  const [files, setFile] = useState();
+  const [files, setFile] = useState(pendingTicketInfo.files);
 
   const debounce = (func, delay) => {
     let timeoutId;

@@ -40,11 +40,11 @@ export default function Tickets() {
         console.log(ticket)
         return(
           <Card key={ticket.id} className="flex flex-col justify-between w-11/12">
-            <CardHeader>
+            <CardHeader className="p-3">
               <CardTitle className="flex justify-between items-center gap-3">
                 {ticket.client_id.name}
               <div className="flex flex-col">
-                  <h6 className="text-xs font-medium text-gray-400 tracking-normal leading-3">ticket number</h6>
+                  <h6 className="text-xs font-medium text-gray-400 tracking-tighter leading-3">citation number</h6>
                   <span className="text-black text-xs">{ticket.ticket_number}</span>
                 </div>
               </CardTitle>
@@ -54,20 +54,20 @@ export default function Tickets() {
               </CardDescription>
             </CardHeader>
             <Separator />
-            <CardContent className="flex gap-5 pt-3">
+            <CardContent className="flex gap-5 p-3">
               <div className="flex flex-col w-[100px]">
-                <label className="text-xs text-gray-400">status</label>
+                <label className="text-xs font-medium text-gray-400 tracking-tighter leading-3">status</label>
                 <span className="text-black text-xs">{ticket.status}</span>
               </div>
               <Separator orientation="vertical" className="h-5 my-auto"/>
               <div className="flex flex-col w-[100px]">
-                <label className="text-xs text-gray-400">court date</label>
+                <label className="text-xs font-medium text-gray-400 tracking-tighter leading-3">court date</label>
                 <span className="text-black text-xs w-[100px]">{new Date(ticket.court_date).toLocaleString()}</span>
               </div>
               <Separator orientation="vertical" className="h-5 my-auto"/>
 
               <div className="flex flex-col w-[100px]">
-                <label className="text-xs text-gray-400">court location</label>
+                <label className="text-xs font-medium text-gray-400 tracking-tighter leading-3">court location</label>
                 <span className="text-black text-xs">{ticket.court_location}</span>
               </div>
             </CardContent>
