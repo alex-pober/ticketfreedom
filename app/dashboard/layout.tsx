@@ -9,6 +9,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
+import { Separator } from "@/components/ui/separator";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
@@ -18,11 +19,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
+    <div className="w-full">
       {/* Include shared UI here e.g. a header or sidebar */}
-      <NavigationMenu className="p-1 m-auto max-w-screen-lg wrap">
+      <NavigationMenu className="p-1 m-auto max-w-screen-lg wrap overflow-hidden">
         <NavigationMenuList>
-          <span className="text-lg font-bold">TicketFreedom</span>
+          <span className="mx-2 text-lg font-bold">TicketFreedom</span>
         </NavigationMenuList>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -52,6 +53,6 @@ export default function DashboardLayout({
       </NavigationMenu>
 
       {children}
-    </section>
+    </div>
   );
 }

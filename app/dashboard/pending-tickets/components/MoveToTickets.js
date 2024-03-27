@@ -27,15 +27,20 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useRouter } from "next/navigation";
 
 export default function MoveToTickets({ pendingTicketInfo }) {
   const supabase = createClient();
-  const [existingClients, setExistingClients] = useState([])
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [existingClients, setExistingClients] = useState([]);
 
   // Client Info
-  const [existingClientId, setExistingClientId] = useState(null)
+  const [existingClientId, setExistingClientId] = useState(null);
   const [name, setName] = useState(pendingTicketInfo.name);
-  const [dlNumber, setDlNumber] = useState(pendingTicketInfo.driver_license_number)
+  const [dlNumber, setDlNumber] = useState(
+    pendingTicketInfo.driver_license_number
+  );
   const [email, setEmail] = useState(pendingTicketInfo.email);
   const [phoneNumber, setPhoneNumber] = useState(pendingTicketInfo.number);
   const [address, setAddress] = useState();
@@ -59,18 +64,18 @@ export default function MoveToTickets({ pendingTicketInfo }) {
   };
 
   const searchClients = async (searchTerm) => {
-    console.log("TERM", searchTerm)
+    console.log("TERM", searchTerm);
     const { data, error } = await supabase
-      .from('clients')
-      .select('*')
-      .filter('name', 'ilike', `%${searchTerm}%`)
+      .from("clients")
+      .select("*")
+      .filter("name", "ilike", `%${searchTerm}%`);
 
-    console.log(data)
+    console.log(data);
     if (error) {
-      console.error('Error searching clients:', error.message);
+      console.error("Error searching clients:", error.message);
       return;
     }
-    setExistingClients(null)
+    setExistingClients(null);
     setExistingClients(data);
   };
 
@@ -84,45 +89,52 @@ export default function MoveToTickets({ pendingTicketInfo }) {
 
   const upsertBothTables = async () => {
     const { data: client, error: clientError } = await supabase
-      .from('clients')
+      .from("clients")
       .upsert([
-        { name: name,
-        dob: dob,
-        email: email,
-        phone: phoneNumber,
-        address: address,
-        driver_license: dlNumber},
+        {
+          name: name,
+          dob: dob,
+          email: email,
+          phone: phoneNumber,
+          address: address,
+          driver_license: dlNumber,
+        },
       ])
-      .select()
-      console.log(client[0].id)
+      .select();
+    console.log(client[0].id);
 
     const { data: tickets, error: ticketsError } = await supabase
-      .from('tickets')
+      .from("tickets")
       .upsert([
-        { status: status,
-        client_id: client[0]?.id,
-        ticket_number: ticketNumber,
-        court_date: courtDate,
-        court_location: courtLocation,
-        payment: payment,
-        files: files },
+        {
+          status: status,
+          client_id: client[0]?.id,
+          ticket_number: ticketNumber,
+          court_date: courtDate,
+          court_location: courtLocation,
+          payment: payment,
+          files: files,
+        },
       ])
-      .select()
+      .select();
+
+    const { error } = await supabase
+      .from("pending-tickets")
+      .delete()
+      .eq("id", pendingTicketInfo?.id);
 
     if (clientError || ticketsError) {
-      console.log("client Error", clientError)
-      console.log("ticket Error", ticketsError)
-      return
+      console.log("client Error", clientError);
+      console.log("ticket Error", ticketsError);
+      return;
     } else {
-      console.log(tickets)
+      router.refresh();
     }
-  }
+  };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button>Move to tickets</Button>
-      </DialogTrigger>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <Button onClick={setOpen}>Move to tickets</Button>
       <DialogContent className="w-11/12 overflow-y-scroll max-h-screen">
         <DialogHeader>
           <DialogTitle>Client Info</DialogTitle>
@@ -134,9 +146,8 @@ export default function MoveToTickets({ pendingTicketInfo }) {
               Name
             </Label>
             <Popover>
-
-              <PopoverTrigger  className="col-span-3">
-               <Input
+              <PopoverTrigger className="col-span-3">
+                <Input
                   id="name"
                   className="col-span-3"
                   value={name}
@@ -328,7 +339,14 @@ export default function MoveToTickets({ pendingTicketInfo }) {
           </Select>
         </div>
         <DialogFooter>
-          <Button onClick={upsertBothTables}>Move to tickets</Button>
+          <Button
+            onClick={async () => {
+              upsertBothTables();
+              setOpen(false);
+            }}
+          >
+            Move to tickets
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
