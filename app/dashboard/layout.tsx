@@ -1,57 +1,54 @@
 "use client";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
-import { Separator } from "@/components/ui/separator";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { usePathname } from "next/navigation";
+import LogoWhite from "@/app/LogoWhiteSvg";
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
   children: React.ReactNode;
 }) {
+  const route = usePathname()
+
   return (
     <div className="w-full">
       {/* Include shared UI here e.g. a header or sidebar */}
-      <NavigationMenu className="p-1 m-auto max-w-screen-lg wrap overflow-hidden">
-        <NavigationMenuList>
-          <span className="mx-2 text-lg font-bold">TicketFreedom</span>
-        </NavigationMenuList>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/dashboard/tickets" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Tickets
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+      <div className="bg-black p-2">
+        <LogoWhite />
+      </div>
+      <Tabs>
+        <TabsList className="inline-flex h-9 items-center text-muted-foreground w-full justify-start rounded-none border-b bg-transparent p-0">
+          <Link href="/dashboard/tickets" legacyBehavior passHref>
+            <TabsTrigger
+              className="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+              value="account"
+              data-state={route === "/dashboard/tickets" ? "active" : "inactive"}
+            >
+              Tickets
+            </TabsTrigger>
+          </Link>
+          <Link href="/dashboard/clients" legacyBehavior passHref>
+            <TabsTrigger
+              className="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+              value="clients"
+              data-state={route === "/dashboard/clients" ? "active" : "inactive"}
 
-          <NavigationMenuItem>
-            <Link href="/dashboard/clients" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Clients
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+            >
+              Clients
+            </TabsTrigger>
+          </Link>
 
-          <NavigationMenuItem>
-            <Link href="/dashboard/pending-tickets" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Pending Tickets
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
+          <Link href="/dashboard/pending-tickets" legacyBehavior passHref>
+            <TabsTrigger
+              className="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+              value="pending"
+              data-state={route === "/dashboard/pending-tickets" ? "active" : "inactive"}
+            >
+              Pending Tickets
+            </TabsTrigger>
+          </Link>
+        </TabsList>
+      </Tabs>
       {children}
     </div>
   );

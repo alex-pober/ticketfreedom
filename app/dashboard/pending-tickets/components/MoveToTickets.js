@@ -101,7 +101,6 @@ export default function MoveToTickets({ pendingTicketInfo }) {
         },
       ])
       .select();
-    console.log(client[0].id);
 
     const { data: tickets, error: ticketsError } = await supabase
       .from("tickets")
@@ -333,8 +332,8 @@ export default function MoveToTickets({ pendingTicketInfo }) {
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Received">Received</SelectItem>
-              <SelectItem value="Not Received">Not Received</SelectItem>
+              <SelectItem value="Received">Paid</SelectItem>
+              <SelectItem value="Not Received">Not Paid</SelectItem>
             </SelectContent>
           </Select>
         </div>
