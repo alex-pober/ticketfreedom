@@ -28,7 +28,7 @@ export default function Zelle() {
           </CardHeader>
           <CardContent className="flex flex-col gap-2 items-center">
             {/* <StripeCheckout handleUpload={insertDataAndUploadImage} /> */}
-            <span className="font-bold text-2xl">(818) 930-7444</span>
+            <span className="font-bold text-2xl">(818) 930-7774</span>
             <Image alt="QR code" src={ZelleQRCode} height={250} width={250} />
             <Button
               variant="outline"

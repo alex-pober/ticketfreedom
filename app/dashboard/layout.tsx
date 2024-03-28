@@ -16,7 +16,7 @@ export default function DashboardLayout({
       <div className="bg-black p-2">
         <LogoWhite />
       </div>
-      <Tabs>
+      <Tabs className="mt-1">
         <TabsList className="inline-flex h-9 items-center text-muted-foreground w-full justify-start rounded-none border-b bg-transparent p-0">
           <Link href="/dashboard/tickets" legacyBehavior passHref>
             <TabsTrigger
