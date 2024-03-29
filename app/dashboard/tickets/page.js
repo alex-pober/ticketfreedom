@@ -44,11 +44,13 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import EditTicket from "./components/EditStatus";
+import EditCourtDate from "./components/EditCourtDate";
 
 export default function Tickets() {
   const supabase = createClient();
   const [tickets, setTickets] = useState([]);
-  console.log(tickets);
+
 
   useEffect(() => {
     async function fetchTickets() {
@@ -69,7 +71,6 @@ export default function Tickets() {
   return (
     <div className="flex flex-col gap-2 max-w-screen-sm mt-5 m-auto items-center">
       {tickets?.map((ticket) => {
-        console.log(ticket.files);
         return (
           <Card
             key={ticket.id}
@@ -111,14 +112,16 @@ export default function Tickets() {
                 <label className="mb-1 text-xs font-medium text-gray-400 tracking-tighter leading-3">
                   status
                 </label>
-                <span className="text-black text-xs">{ticket.status}</span>
+                {/* <span className="text-black text-xs">{ticket.status}</span> */}
+                <EditTicket ticketInfo={ticket}/>
               </div>
-              <div className="flex flex-col max-w-16">
+              <div className="flex flex-col max-w-20">
                 <label className="mb-1 flex items-center gap-1 text-xs font-medium text-gray-400 tracking-tighter leading-3">
                   court <CalendarDays width={12} height={12} />
                 </label>
-                <span className="text-black text-xs w-[100px]">
-                  {new Date(ticket.court_date).toLocaleString()}
+                <span className="text-black text-xs">
+                  {/* {new Date(ticket.court_date).toLocaleString()} */}
+                  <EditCourtDate ticket={ticket}/>
                 </span>
               </div>
               <div className="flex flex-col max-w-16">
