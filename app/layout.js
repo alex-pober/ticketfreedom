@@ -5,9 +5,9 @@ import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 export const metadata = {
-  title: "Ticket Freedom - Los Angeles Traffic Ticket Lawyer",
+  title: "Affordable Traffic Ticket Lawyer Los Angeles | Ticket Freedom",
   description:
-    "Get your traffic tickets handled by a professional lawyer in Los Angeles. Fast, efficient, and reliable legal services to fight your traffic ticket violations. Save time, money, and stress with Ticket Freedom.",
+    "Get your traffic tickets handled by an experienced and affordable lawyer in Los Angeles. Fight your speeding, red light, and other traffic violations with Ticket Freedom.",
   keywords: [
     "Traffic Ticket Lawyer",
     "Traffic ticket lawyer in los angeles ",
@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     url: "https://www.ticketfreedom.com",
     type: "website",
-    title: "Ticket Freedom - Los Angeles Traffic Ticket Lawyer",
+    title: "Affordable Traffic Ticket Lawyer Los Angeles | Ticket Freedom",
     description:
      "Professional legal services in Los Angeles for fighting your traffic ticket violations. Contact us today to save on fines and avoid points on your license.",
      images: [

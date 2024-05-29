@@ -15,20 +15,9 @@ export default function EditCourtDate({ticket}){
   const [hours, setHours] = useState('')
   console.log('state', date)
 
-  useEffect(() => {
-    async function UpdateCourtDate(ticket){
-      const { data, error } = await supabase
-      .from('tickets')
-      .update({ court_date: date })
-      .eq('id', ticket.id)
-
-    }
-
-    UpdateCourtDate(ticket)
-    setHours(date.substring(11, 16))
-  }, [date])
 
   const handleTimeChange = (e) => {
+    e.preventDefault()
     const newTime = e.target.value; // Extract new time from the event
 
     // Construct a new date-time string with the new time
@@ -38,12 +27,23 @@ export default function EditCourtDate({ticket}){
     setDate(newDateTime);
   };
 
+  async function UpdateCourtDate(ticket){
+    console.log("hello court update")
+    const { data, error } = await supabase
+    .from('tickets')
+    .update({ court_date: date })
+    .eq('id', ticket.id)
+    .select()
+
+    if (data) setHours(date?.substring(11, 16))
+  }
+
   return (
     <Popover>
       <PopoverTrigger className="text-left text-xs">
         {new Date(date).toLocaleDateString('en-US', {timeZone: 'UTC', month: '2-digit', day: '2-digit', year: 'numeric'}) + " " + new Date(date).toLocaleTimeString(['en-US'], {timeZone: 'UTC', hour: '2-digit', minute:"2-digit"})}
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0" align="center">
+      <PopoverContent className="w-auto p-0" align="center" onCloseAutoFocus={() => {UpdateCourtDate(ticket)}}>
         <Calendar
           mode="single"
           selected={date}
@@ -52,7 +52,7 @@ export default function EditCourtDate({ticket}){
         />
         <div className="flex flex-row items-center gap-2 justify-center">
           <label className="text-sm font-medium ">Start time: </label>
-          <Input className="w-min border-none" type="time" onChange={handleTimeChange} value={defaultTimeValue}/>
+          <Input className="w-min border-none" type="time" onChange={handleTimeChange} value={hours}/>
         </div>
       </PopoverContent>
     </Popover>

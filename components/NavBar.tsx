@@ -15,7 +15,7 @@ import { ServicesDialog } from "./ServicesDialog";
 
 export default function NavBar() {
   return (
-    <div className="flex items-center justify-between min-w-full p-4 bg-black dark:bg-gray-800">
+    <div className="z-10 flex items-center justify-between min-w-full p-4 bg-black dark:bg-gray-800">
       <Link className="flex items-center gap-2" href="/">
         <LogoWhite />
       </Link>
