@@ -13,15 +13,15 @@ export default function LandingPageHero() {
       <section className="w-full">
         <div className="">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="flex flex-col items-center items-center gap-1 mt-3">
+            <div className="flex flex-col items-center items-center gap-1">
               <div
-                className="w-full items-center flex flex-col bg-top pt-20 p-10 xs:p-5 xs:pt-10 "
+                className="w-screen items-center flex flex-col bg-top pt-20 p-10 xs:pt-10 "
                 style={{
                   backgroundImage: "url(/YellowWave.svg)",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
-                  backgroundPositionY: "-60px",
-                  backgroundClip: 'border-box'
+                  backgroundPositionY: "-240px",
+                  backgroundClip: 'border-box',
                 }}
               >
                 <h1 className="max-w-[700px] text-[2rem] leading-[2rem] font-bold tracking-tighter text-black text-center">
