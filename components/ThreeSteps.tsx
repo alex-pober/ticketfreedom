@@ -66,7 +66,7 @@ export default function ThreeSteps() {
           className="text-2xl text-[#ffd35c] border-[#ffd35c] mt-5"
           size="lg"
         >
-          <Link href="/upload">Get Started</Link>
+          <Link href="/handle-ticket">Get Started</Link>
         </Button>
       </div>
     </section>

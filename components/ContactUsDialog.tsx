@@ -19,44 +19,68 @@ export function ContactUsDialog() {
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="ghost">
+          <Button variant="ghost" className="hover:bg-[#ffd35c]/10 transition-colors">
             Contact us <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
         </DialogTrigger>
-        <DialogContent className="w-11/12 max-w-xl max-h-screen p-9 sm:grid-cols-2 sm:items-center">
-          <DialogHeader>
+        <DialogContent className="w-11/12 max-w-xl max-h-screen p-8 sm:grid-cols-2 sm:items-center bg-white border-none shadow-lg">
+          <DialogHeader className="space-y-6">
             <DialogTitle>
-              <h1 className="text-4xl font-bold tracking-tighter xl:text-5xl/none text-black">
+              <h1 className="text-4xl font-bold tracking-tight text-black">
                 Call us.
-                <br data-owner="balance-text" aria-hidden="true" />
+                <br />
                 Text us.
               </h1>
             </DialogTitle>
-            <DialogDescription className="sm:m-auto/none">
-              (we got imessage)
+            <DialogDescription className="text-lg text-black/70 italic">
+              (we got iMessage)
             </DialogDescription>
-            <DialogTitle>
-              <a href="tel:8189307774"className={buttonVariants({ variant: "default", size: 'lg'})}>
-                <PhoneCall className="mr-2 h-4 w-4"/>
-                  (818) 930 - 7774
+            <div className="space-y-4 flex flex-col items-center">
+              <a 
+                href="tel:8189307774"
+                className={buttonVariants({ 
+                  variant: "default", 
+                  size: 'lg',
+                  className: "w-full max-w-xs justify-center bg-[#ffd35c] hover:bg-[#ffd35c]/90 hover:text-zinc-950 font-semibold shadow-md transition-all hover:shadow-lg"
+                })}
+              >
+                <PhoneCall className="mr-2 h-5 w-5"/>
+                (818) 930-7774
               </a>
-              <h1 className="text-xl font-simibold text-black m-1">
-                info@ticketfreedom.com
-              </h1>
-            </DialogTitle>
+              <div className="text-center">
+                <h2 className="text-lg font-medium text-black/80 hover:text-black transition-colors">
+                  info@ticketfreedom.com
+                </h2>
+              </div>
+            </div>
           </DialogHeader>
-          <div className="flex justify-around flex-wrap gap-2">
-            <div>
-              <p className="font-bold">Spanish</p>
-              <a href="tel:8888583736"className={buttonVariants({ variant: "default", size: 'sm'})}>
-                <PhoneCall className="mr-2 h-4 w-4"/>
+          
+          <div className="mt-8 flex flex-col gap-8 items-center">
+            <div className="flex-1 max-w-[240px] space-y-1">
+              <p className="font-semibold text-black/80 text-center">Spanish</p>
+              <a 
+                href="tel:8888583736"
+                className={buttonVariants({ 
+                  variant: "default", 
+                  size: 'default',
+                  className: "w-full justify-center bg-[#ffd35c]/90 hover:bg-[#ffd35c] text-zinc-950 font-medium shadow-sm transition-all hover:shadow-md whitespace-nowrap"
+                })}
+              >
+                <PhoneCall className="mr-2 h-4 w-4 flex-shrink-0"/>
                 (888) 858-3736
               </a>
             </div>
-            <div>
-              <p className="font-bold">Russian</p>
-              <a href="tel:8189307774"className={buttonVariants({ variant: "default", size: 'sm'})}>
-                <PhoneCall className="mr-2 h-4 w-4"/>
+            <div className="flex-1 max-w-[240px] space-y-1">
+              <p className="font-semibold text-black/80 text-center">Russian</p>
+              <a 
+                href="tel:8189307774"
+                className={buttonVariants({ 
+                  variant: "default", 
+                  size: 'default',
+                  className: "w-full justify-center bg-[#ffd35c]/90 hover:bg-[#ffd35c] text-zinc-950 font-medium shadow-sm transition-all hover:shadow-md whitespace-nowrap"
+                })}
+              >
+                <PhoneCall className="mr-2 h-4 w-4 flex-shrink-0"/>
                 (818) 930-7774
               </a>
             </div>

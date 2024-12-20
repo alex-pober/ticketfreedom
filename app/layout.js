@@ -3,6 +3,7 @@ import { cn } from "../lib/utils"
 import { fontSans } from "@/lib/fonts"
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
+import NavBar from "@/components/NavBar";
 
 export const metadata = {
   title: "Affordable Traffic Ticket Lawyer Los Angeles | Ticket Freedom",
@@ -67,6 +68,7 @@ export default function RootLayout({children}) {
           fontSans.className
         )}>
         <main className="">
+          <NavBar />
           {children}
           <Analytics />
         </main>

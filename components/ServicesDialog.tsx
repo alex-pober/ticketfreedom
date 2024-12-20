@@ -38,10 +38,10 @@ export function ServicesDialog() {
             Services
           </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-[425px] bg-white">
           <DialogHeader>
             <DialogTitle>
-              <h1 className="text-4xl font-extrabold tracking-tight lg:text-4xl">
+              <h1 className="text-3xl font-bold tracking-tight text-black">
                 We do more than just tickets.
               </h1>
             </DialogTitle>
@@ -67,15 +67,15 @@ export function ServicesDialog() {
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle>
-            <h1 className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-6xl/none text-black m-3">
+            <h1 className="text-3xl font-bold tracking-tight text-black m-3">
               We do more than just tickets.
             </h1>
           </DrawerTitle>
         </DrawerHeader>
-        <ProfileForm className="m-3" />
+        <ProfileForm className="px-4" />
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button>Cancel</Button>
+            <Button variant="outline">Close</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
@@ -85,31 +85,22 @@ export function ServicesDialog() {
 
 function ProfileForm({ className }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("grid items-start gap-4", className)}>
-      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
-        <h1 className="text-4xl font-bold">Criminal</h1>
-        <p className="text-m">Misdemeanor & Felonies</p>
+    <div className={cn("grid items-start gap-6", className)}>
+      <div className="bg-[#ffd35c] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col items-center gap-2">
+        <h1 className="text-2xl font-bold text-black">Criminal</h1>
+        <p className="text-black/80 text-center">Misdemeanor & Felonies</p>
       </div>
 
-      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
-        <h1 className="text-4xl font-bold">Injury & Accidents</h1>
+      <div className="bg-[#ffd35c] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col items-center gap-2">
+        <h1 className="text-2xl font-bold text-black">Injury & Accidents</h1>
+        <p className="text-black/80 text-center">Personal Injury Cases</p>
       </div>
 
-
-      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
-        <h1 className="text-4xl font-bold">Restraining Orders</h1>
+      <div className="bg-[#ffd35c] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col items-center gap-2">
+        <h1 className="text-2xl font-bold text-black">Restraining Orders</h1>
+        <p className="text-black/80 text-center">Protection & Legal Support</p>
       </div>
 
-      <div className="bg-[#ffd35c] rounded-3xl outline outline-4 p-2 flex flex-col items-center">
-        <h1 className="text-4xl font-bold">Expungements</h1>
-      </div>
-
-      {/* <Badge
-        variant="outline"
-        className="bg-[#ffd35c] justify-center outline outline-4 outline-{#ffd35c} text-4xl"
-      >
-        Injury & Accidents
-      </Badge> */}
       <div className="flex flex-col gap-3 items-center m-3">
         <h1 className="text-[2.5rem] leading-[2.5rem] font-bold tracking-tighter xl:text-4xl/none text-black">
           Give us a call

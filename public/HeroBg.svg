@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="800" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#filter0_f)">
+    <path d="M1000 400C1000 620 800 700 600 700C400 700 200 620 200 400C200 180 400 100 600 100C800 100 1000 180 1000 400Z" fill="#ffd35c" fill-opacity="0.5"/>
+  </g>
+  <g filter="url(#filter1_f)">
+    <path d="M1200 350C1200 570 1000 650 800 650C600 650 400 570 400 350C400 130 600 50 800 50C1000 50 1200 130 1200 350Z" fill="#ffd35c" fill-opacity="0.3"/>
+  </g>
+  <defs>
+    <filter id="filter0_f" x="0" y="-100" width="1400" height="1000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur"/>
+    </filter>
+    <filter id="filter1_f" x="200" y="-150" width="1200" height="1000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>

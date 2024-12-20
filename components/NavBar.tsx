@@ -28,7 +28,7 @@ export default function NavBar() {
             className="text-[#ffd35c] border-[#ffd35c] bg-transparent"
             size="sm"
           >
-            <Link href="/upload">Fight my ticket</Link>
+            <Link href="/handle-ticket">Fight my ticket</Link>
           </Button>
           <AuthButton />
         </div>

@@ -6,8 +6,6 @@ import ThreeSteps from "@/components/ThreeSteps";
 export default async function Index() {
   return (
     <div className="flex flex-col items-center">
-      <NavBarResponsive />
-
       <div className="animate-in flex-1 flex flex-col opacity-0 items-center">
         <LandingPageHero />
         {/* <LandingPageTicketStepper /> */}
@@ -16,7 +14,7 @@ export default async function Index() {
 
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs mt-20">
         <span>
-        Copyright © 2024 , Ticket Freedom Professional Law Corporation. All Rights Reserved
+        Copyright © 2025 , Ticket Freedom Professional Law Corporation. All Rights Reserved
         </span>
       </footer>
     </div>
