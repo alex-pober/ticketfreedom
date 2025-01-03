@@ -41,7 +41,7 @@ export function ContactUsDialog() {
                 className={buttonVariants({ 
                   variant: "default", 
                   size: 'lg',
-                  className: "w-full max-w-xs justify-center bg-[#ffd35c] hover:bg-[#ffd35c]/90 hover:text-zinc-950 font-semibold shadow-md transition-all hover:shadow-lg"
+                  className: "w-full max-w-xs justify-center bg-[#ffd35c] hover:bg-[#ffd35c]/90 font-semibold shadow-md transition-all hover:shadow-lg"
                 })}
               >
                 <PhoneCall className="mr-2 h-5 w-5"/>
@@ -63,7 +63,7 @@ export function ContactUsDialog() {
                 className={buttonVariants({ 
                   variant: "default", 
                   size: 'default',
-                  className: "w-full justify-center bg-[#ffd35c]/90 hover:bg-[#ffd35c] text-zinc-950 font-medium shadow-sm transition-all hover:shadow-md whitespace-nowrap"
+                  className: "w-full justify-center bg-[#ffd35c]/90 hover:bg-[#ffd35c] font-medium shadow-sm transition-all hover:shadow-md whitespace-nowrap"
                 })}
               >
                 <PhoneCall className="mr-2 h-4 w-4 flex-shrink-0"/>
@@ -77,7 +77,7 @@ export function ContactUsDialog() {
                 className={buttonVariants({ 
                   variant: "default", 
                   size: 'default',
-                  className: "w-full justify-center bg-[#ffd35c]/90 hover:bg-[#ffd35c] text-zinc-950 font-medium shadow-sm transition-all hover:shadow-md whitespace-nowrap"
+                  className: "w-full justify-center bg-[#ffd35c]/90 hover:bg-[#ffd35c] font-medium shadow-sm transition-all hover:shadow-md whitespace-nowrap"
                 })}
               >
                 <PhoneCall className="mr-2 h-4 w-4 flex-shrink-0"/>

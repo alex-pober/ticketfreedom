@@ -16,11 +16,11 @@ export default function LandingPageHero() {
               <div
                 className="w-screen items-center flex flex-col bg-top pt-20 p-10 xs:pt-10 relative overflow-hidden"
                 style={{
-                  backgroundColor: '#FFF',
-                  minHeight: '700px'
+                  backgroundColor: "#FFF",
+                  minHeight: "700px",
                 }}
               >
-                <div 
+                <div
                   className="absolute inset-0 w-full h-full"
                   style={{
                     backgroundImage: `url('/SimpleHeroBg.svg')`,
@@ -32,44 +32,56 @@ export default function LandingPageHero() {
                   }}
                 />
 
-<div className="relative z-10 flex flex-col items-center w-full max-w-6xl mx-auto">
+                <div className="relative z-10 flex flex-col items-center w-full max-w-6xl mx-auto">
+                  <div className="mb-6 transform -rotate-2">
+                    <div className="bg-black px-6 py-2 rounded-md shadow-lg">
+                      <p className="text-xl md:text-2xl font-bold text-[#ffd35c] tracking-widest">
+                        TICKETFREEDOM.COM
+                      </p>
+                    </div>
+                  </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black text-center leading-tight">
-                    <span className="bg-gradient-to-r from-[#ffd35c] to-[#000000]/50 bg-[length:100%_20%] bg-no-repeat bg-bottom">Experienced</span>{" "}
-                    <span className="bg-gradient-to-r from-[#ffd35c] to-[#000000]/50 bg-[length:100%_20%] bg-no-repeat bg-bottom">Traffic Ticket</span>{" "}
-                    <span className="bg-gradient-to-r from-[#ffd35c] to-[#000000]/50 bg-[length:100%_20%] bg-no-repeat bg-bottom">Lawyer</span>
-                    <br />in Los Angeles
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-black/90 drop-shadow-[0_0_30px_rgba(255,211,92,0.3)] relative">
+                      Experienced
+                    </span>{" "}
+                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-black to-[#7c3600] drop-shadow-[0_0_30px_rgba(255,211,92,0.3)] relative">
+                      Traffic Ticket
+                    </span>{" "}
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-black/90 drop-shadow-[0_0_30px_rgba(255,211,92,0.3)] relative">
+                      Lawyer
+                    </span>
+                    <br />
+                    in Los Angeles
                   </h1>
                   <p className="max-w-[700px] text-lg md:text-xl text-gray-600 text-center mt-6">
                     At Ticket Freedom, we specialize in providing{" "}
                     <strong>affordable traffic ticket defense</strong> in Los
                     Angeles. Our <strong>experienced traffic attorneys</strong>{" "}
                     are dedicated to helping you{" "}
-                    <strong>fight traffic violations</strong> and avoid points on
-                    your driving record.
+                    <strong>fight traffic violations</strong> and avoid points
+                    on your driving record.
                   </p>
 
                   <div className="call-to-action-buttons mt-12 flex gap-4 flex-wrap justify-center">
                     <Button size="lg" className="text-lg px-8" asChild>
                       <Link href="/handle-ticket">
-                        Let us handle it <ChevronRight className="ml-2 h-5 w-5" />
+                        Let us handle it{" "}
+                        <ChevronRight className="ml-2 h-5 w-5" />
                       </Link>
                     </Button>
                     <ContactUsDialog />
                   </div>
                 </div>
 
-              <Image
-                className="relative z-10 w-full max-w-[800px] h-auto rounded-lg"
-                priority
-                alt="image of cop in rear view mirror"
-                src={NewRearViewImage}
-                width={800}
-                height={300}
-              />
-
+                <Image
+                  className="relative z-10 w-full max-w-[800px] h-auto rounded-lg"
+                  priority
+                  alt="image of cop in rear view mirror"
+                  src={NewRearViewImage}
+                  width={800}
+                  height={300}
+                />
               </div>
-
-              
 
               <div className="flex flex-row flex-wrap justify-center gap-20 xs:gap-10 mb-28 max-w-6xl mx-auto px-4">
                 <div className="flex-1 min-w-[300px] text-gray-600 mt-6">
